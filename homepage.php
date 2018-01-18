@@ -21,6 +21,8 @@
  	<div class="block-content">
  		<div class="inner">
 			<img src="images/Photo_etudiants.PNG">
+			
+			
 			<div class="method">
 				<div class="text">
 					<h1>Nos méthodes</h1>	
@@ -36,6 +38,28 @@
 					<p>Sérigraphie</p>
 				</div>
 			</div>
+			</div>
+			
+			
+			<div class="value">
+				<div class="livraison">
+					<img src="images/icones/cargo-truck.png">
+					<p>Livraison rapide</p>
+				</div>
+				<div class="prix">
+					<img src="images/icones/27513.png">
+					<p>Prix dégréssifs</p>
+				</div>
+				<div class="paiement">
+					<img src="images/icones/security-on.png">
+					<p>Paiement sécurisé</p>
+				</div>
+				<div class="client">
+					<img src="images/icones/customer.png">
+					<p>Service client 3 étoiles</p>
+				</div>
+			</div>
+				
 			</div>
 		
  	</div>

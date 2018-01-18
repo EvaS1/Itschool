@@ -106,3 +106,21 @@
 	border-radius: 7px;
 	padding: 13px 35px 13px 35px;
 }
+
+/* NOS VALEURS */
+
+.value {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #f7f7f7;
+	box-shadow: 0 2px 6px #888;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 35px;
+	
+}
+
+.value p {
+	text-align: center;
+}
