@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.block-content .inner {
+	width: 1100px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+/* NOS METHODES */
+
+
+.block-content .inner .method {
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 85px;
+	padding-bottom: 210px;
+}
+
+.block-content .method h1{
+	font-family: 'Poiret One', sans-serif;
+	font-size: 26px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 55px;
+	
+}
+
+.block-content .method .images {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+	/* BRODERIE */
+
+
+.block-content .method .images .broderie {
+	background-image: url(' ../images/broderie.jpg');
+	border-radius: 7px;
+    height: 260px;
+    width: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.block-content .method .images .broderie p {
+    font-family: 'Poiret One', sans-serif;
+	font-size: 30px;
+	margin: auto;
+    color: white;
+	background: rgba(0,0,0,0.7);
+	border: 1px ridge white;
+	border-radius: 7px;
+	padding: 13px 35px 13px 35px;
+}
+
+
+	/* FLOCAGE */
+
+
+.block-content .method .images .flocage {
+	background-image: url(' ../images/flocage.jpg');
+	border-radius: 7px;
+    height: 260px;
+    width: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.block-content .method .images .flocage p {
+    font-family: 'Poiret One', sans-serif;
+	font-size: 30px;
+	margin: auto;
+    color: white;
+	background: rgba(0,0,0,0.7);
+	border: 1px ridge white;
+	border-radius: 7px;
+	padding: 13px 35px 13px 35px;
+}
+
+
+	/* SERIGRAPHIE */
+
+
+.block-content .method .images .serigraphie {
+	background-image: url(' ../images/sérigraphie.jpg');
+	border-radius: 7px;
+	height: 260px;
+    width: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.block-content .method .images .serigraphie p {
+    font-family: 'Poiret One', sans-serif;
+	font-size: 30px;
+	margin: auto;
+    color: white;
+	background: rgba(0,0,0,0.7);
+	border: 1px ridge white;
+	border-radius: 7px;
+	padding: 13px 35px 13px 35px;
+}
