@@ -1,0 +1,308 @@
+/*TOUS*/
+p {
+	margin: 0;
+}
+
+
+body {
+	background: url(../images/gplaypattern.png);
+}
+
+/*Largeur blocks*/
+.block-header .inner,
+.block-nav .inner {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+/*-------------------------------------------------HEADER-------------------------------------------*/
+
+/*Style header*/
+.block-header .inner {
+	background-color: white;
+}
+
+/*Style topbar*/
+.block-header .topbar {
+	background-color: #f7f7f7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+/*Icône + Connexion*/
+.block-header .topbar .connexion a {
+	display: flex;
+	align-items: center;
+	color: black;
+}
+
+/*Icône connexion*/
+.block-header .topbar .connexion img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+/*Style texte connexion*/
+.block-header .topbar .connexion p {
+	font-size: 1.1rem;
+}
+
+/*Conteneur réseaux*/
+.block-header .topbar .socialmedia {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Enlever puces et mettre icônes réseaux les unes à côté des autres*/
+.block-header .topbar .socialmedia ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+/*Taille icônes réseaux*/
+.block-header .topbar .socialmedia li img {
+	width: 25px;
+}
+
+/*Espaces entre icônes*/
+.block-header .topbar .socialmedia li:not(:last-of-type) img {
+	margin-right: 10px;
+}
+
+/*Style barre logo + barre recherche*/
+.block-header .logobar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 0 10px 20px;
+}
+
+/*Taille logo*/
+.block-header .inner .logo {
+	width: 100px;
+	margin: 20px 20px 0px 0px;
+}
+
+/*Style partie droite*/
+.block-header .logobar .right {
+	display: flex;
+	justify-content: space-between;
+}
+
+/*Style barre de recherche*/
+.block-header .logobar .searchbar {
+	display: flex;
+	align-items: center;
+}
+
+/*Enlever marges champ recherche*/
+.block-header .logobar form {
+	margin: 0 40px 0 0;
+}
+
+/*Changer taille champ recherche*/
+.block-header .logobar form input {
+	width: 250px;
+}
+
+/*Loupe dans barre de recherche*/
+.block-header .logobar .searchbar img {
+	position: absolute;
+	z-index: 1;
+	margin: 0 0 0 226px;
+}
+
+/*Style panier*/
+.block-header .logobar .cart a  {
+	display: flex;
+	align-items: center;
+	margin-left: 40px;
+	color: black;
+}
+
+/*Espace entre icône et panier*/
+.block-header .logobar .cart img {
+	margin-right: 10px;
+}
+
+/*Espace entre icône et panier*/
+.block-header .logobar .cart p {
+	font-size: 1.1rem;
+}
+
+
+/*----------------------------------------------BARRE DE NAVIGATION-----------------------------------------*/
+
+/*Couleur barre de nav*/
+.block-nav {
+	background: #771613;
+	box-shadow: 0px 2px 6px #888;
+}
+
+/*Répartition nav*/
+.block-nav .nav {
+	/*display: flex;
+	justify-content: space-around;*/
+	padding: 0 10px;
+}
+
+/*Espace autour des onglets*/
+.block-nav .nav-link {
+	margin: 0 69px;
+}
+
+/*Style "a"*/
+.block-nav a {
+	color: white;
+	font-size: 1.2em;
+	padding: 0.5rem 0px;
+}
+
+/*Style séparateurs*/
+.block-nav .nav > li:nth-child(2),
+.block-nav .nav > li:nth-child(4),
+.block-nav .nav > li:nth-child(6),
+.block-nav .nav > li:nth-child(8) {
+	color: white;
+	padding: .30rem 0rem;
+	font-size: 1.4em;
+	font-weight: lighter;
+}
+
+
+/*Style nav au survol ou au clic*/
+.block-nav a:hover, 
+.block-nav a:focus,
+.block-nav a:active { 
+	color: #BBBBBB;
+	text-decoration: none;
+}
+
+.block-nav .nav-item {
+	position: relative;
+}
+
+/*------------------------------------------------------------SOUS-NAV------------------------------------*/
+
+/*Sortir sous-nav du fond de la nav*/
+.block-nav .nav2,
+.block-nav .nav2-sacs,
+.block-nav .nav2-accessoires,
+.block-nav .nav2-creations {
+	position: absolute;
+	min-width: 100%;
+	background-color: rgba(255,255,255,0.50);
+	display: none;
+}
+
+.block-nav .nav > li:hover > ul{ /*Pour faire apparaître la sous-navigation au survol du titre de nav*/
+	display: block;	
+}
+
+/*Couleur a sous-nav*/
+.block-nav .nav2 a, 
+.block-nav .nav2-sacs a,
+.block-nav .nav2-accessoires a,
+.block-nav .nav2-creations a {
+	color: black;
+}
+
+/*Enlever puces et style éléments*/
+.block-nav .nav2 li,
+.block-nav .nav2-sacs li,
+.block-nav .nav2-accessoires li,
+.block-nav .nav2-creations li {
+	list-style: none;
+	font-size: 1rem;
+	font-weight: normal;
+	padding: 10px;
+}
+
+.block-nav .nav2 li:hover,
+.block-nav .nav2 li:focus,
+.block-nav .nav2 li:active,
+.block-nav .nav2-sacs li:hover,
+.block-nav .nav2-sacs li:focus,
+.block-nav .nav2-sacs li:active,
+.block-nav .nav2-accessoires li:hover,
+.block-nav .nav2-accessoires li:focus,
+.block-nav .nav2-accessoires li:active,
+.block-nav .nav2-creations li:hover,
+.block-nav .nav2-creations li:focus,
+.block-nav .nav2-creations li:active {
+	background-color: rgba(158,156,156,0.30);
+}
+
+.block-nav .nav2-item {
+	position: relative;
+}
+
+/*Séparateur nav*/
+.block-nav .nav2 li:first-of-type,
+.block-nav .nav2-sacs li:not(:last-of-type),
+.block-nav .nav2-accessoires li:not(:last-of-type),
+.block-nav .nav2-creations li:not(:last-of-type) {
+	border-bottom: 1px solid #666;
+}
+
+/*Bordure sous-nav*/
+.block-nav .nav2,
+.block-nav .nav2-sacs,
+.block-nav .nav2-accessoires,
+.block-nav .nav2-creations {
+	border-right: 1px solid #666;
+	border-left: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+
+/*--------------------------------------------------SOUS-SOUS-NAV-----------------------------------------*/
+
+/*Position et style sous-sous-nav*/
+.block-nav .nav3-TS {
+	position: absolute;
+	left: 227px;
+    top: 0;
+	min-width: 100%;
+	background-color: rgba(255,255,255,0.30);
+	display: none;
+}
+
+/*Position et style sous-sous-nav*/
+.block-nav .nav3-Sweats {
+	position: absolute;
+	left: 227px;
+    top: 0;
+	min-width: 100%;
+	background-color: rgba(255,255,255,0.30);
+	display: none;
+}
+
+.block-nav .nav2 > li:hover ul { /*Pour faire apparaître la sous-navigation au survol du titre de nav*/
+	display: block;	
+}
+
+/*Bordures sous-sous-nav T-Shirts*/
+.block-nav .nav3-TS {
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+/*Bordures sous-sous-nav Sweats*/
+.block-nav .nav3-Sweats {
+	border-top: 1px solid #666;
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+}
+
+/*Bordure gauche sous-sous-nav Sweats */
+.block-nav .nav3-Sweats li:last-child {
+	border-left: 1px solid #666;
+}
