@@ -17,8 +17,6 @@ ul {
 	font-size: 13px;
 	text-transform: uppercase;
 	background-color: #771613;
-	position:absolute;
-	bottom:0;
 	width: 100%;
 }
 
@@ -33,6 +31,7 @@ ul {
 	padding: 37px;
 	justify-content: space-around;
 	align-items: center;
+	margin-bottom: 0;
 }
 
 .block-footer li:last-child {
