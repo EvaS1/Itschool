@@ -63,16 +63,18 @@
 			<div class="last">
 				<div class="text">
 					<h2 class="title">Nos derniers articles personnalisés</h2>
+					
+					<p class="subtitle">Nous réalisons des projets d'impression d’articles personnalisés pour nos clients partout en Europe</h3>
 				</div>
 				<div class="images">
-					<img src=""
+					<img src="images/Broderie-Gildan.jpg">
+					<img src="images/broderie-gildan (1).jpg">
+					<img src="images/Flocage-Stanley-Stella.jpg">
+					<img src="images/sweat-light-pink.jpg">
 				</div>
 				
 			</div>
 				
-			<div class="new">
-				div.	
-			</div>
 		</div>		
  	</div>
  </div>
