@@ -93,8 +93,14 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 0;	
+	padding: 20px 0;
 }
+
+.block-content-listing .first-line a {
+	color: black;
+	text-decoration: none
+}
+
 
 /*Style coeurs*/
 .block-content-listing .first-line .hearts {

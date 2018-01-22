@@ -54,10 +54,14 @@
 					<div class="products">
 						<div class="product1">
 							<div class="img-product">
+								<a href="detail.php">
 								<img src="images/listing-1.jpg" alt="image1">
+								</a>
 							</div>
 							<div class="first-line">
-								<h2>Paris</h2>
+								<a href="detail.php">
+									<h2>Paris</h2>
+								</a>
 								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
 									<img src="images/icones/like-red.png" alt="heart">
