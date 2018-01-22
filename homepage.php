@@ -25,7 +25,7 @@
 			
 			<div class="method">
 				<div class="text">
-					<h1>Nos méthodes</h1>	
+					<h2 class="title">Nos méthodes</h2>	
 				</div>
 			<div class="images">
 				<div class="broderie">
@@ -58,6 +58,16 @@
 					<img src="images/icones/customer.png">
 					<p>Service client 3 étoiles</p>
 				</div>
+			</div>
+			
+			<div class="last">
+				<div class="text">
+					<h2 class="title">Nos derniers articles personnalisés</h2>
+				</div>
+				<div class="images">
+					<img src=""
+				</div>
+				
 			</div>
 				
 			</div>
