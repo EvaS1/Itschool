@@ -77,7 +77,6 @@
 			  <li class="nav-item">
 				<a class="nav-link" href="#">Accueil</a>
 			  </li>
-			  <li>|</li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#">Vêtements</a>
 			  	<ul class="nav2">
@@ -105,7 +104,6 @@
 			  		</li>
 				 </ul>
 			  </li>
-			  <li>|</li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#">Sacs</a>
 				<ul class="nav2-sacs">
@@ -122,7 +120,6 @@
 			  		</li>
 				 </ul>
 			  </li>
-			  <li>|</li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#">Accessoires</a>
 				<ul class="nav2-accessoires">
@@ -139,7 +136,6 @@
 			  		</li>
 				 </ul>
 			  </li>
-			  <li>|</li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#">Créations</a>
 				<ul class="nav2-creations">

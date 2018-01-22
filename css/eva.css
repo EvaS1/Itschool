@@ -165,15 +165,9 @@ body {
 	padding: 0.5rem 0px;
 }
 
-/*Style séparateurs*/
-.block-nav .nav > li:nth-child(2),
-.block-nav .nav > li:nth-child(4),
-.block-nav .nav > li:nth-child(6),
-.block-nav .nav > li:nth-child(8) {
-	color: white;
-	padding: .30rem 0rem;
-	font-size: 1.4em;
-	font-weight: lighter;
+/*Séparteurs*/
+.block-nav .nav li:not(:last-of-type) {
+	border-right: 0.5px solid rgba(255,255,255,0.80);
 }
 
 

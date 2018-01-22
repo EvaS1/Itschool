@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+.block-content-listing .inner {
+	width: 1100px;
+	margin: 0 auto;
+	background-color: white;
+}
