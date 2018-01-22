@@ -92,7 +92,7 @@
 						</ul>
 			  		</li>
 			  		<li class="nav2-item">
-			  			<a class="nav2-link" href="#">Sweats</a>
+			  			<a class="nav2-link" href="listing.php">Sweats</a>
 			  			<ul class="nav3-Sweats" href="#">
 							<li class="nav3-item">
 								<a class="nav3-link" href="#">Avec capuche</a>				
