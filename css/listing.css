@@ -5,8 +5,18 @@
 	width: 1100px;
 	margin: 0 auto;
 	background-color: white;
-	position: relative;
+	padding: 0 80px;
 }
+
+/*---------------HAUT DE PAGE--------------*/
+
+.block-content-listing .top {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding-top: 65px;
+}
+
 
 /*---------------FIL D'ARIANE--------------*/
 
@@ -14,8 +24,6 @@
 .block-content-listing .location ul {
 	display: flex;
 	list-style: none;
-	padding-top: 65px;
-	padding-left: 80px;
 }
 
 /*Liens en noir*/
@@ -28,3 +36,53 @@
 .block-content-listing .location li:not(:first-of-type) {
 	padding-left: 4px;
 }
+
+/*---------------PRODUITS--------------*/
+
+/*Afficher 2 produits l'un à côté de l'autre*/
+.block-content-listing .products {
+	display: flex;
+	justify-content: space-between;
+}
+
+/*Largeur cases produits*/
+.block-content-listing .products .product1,
+.block-content-listing .products .product2 {
+	width: 400px;
+	height: 750px;
+}
+
+/*Redimensionnement images*/
+.block-content-listing .products .img-product img {
+	width: 400px;
+}
+
+/*Nom produit et coeur alignés*/
+.block-content-listing .first-line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	
+}
+
+/*Style nom produits*/
+.block-content-listing .first-line p {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/*Style descriptions*/
+.block-content-listing .description {
+	text-align: justify;
+	height: 75px;
+}
+
+/*Style prix*/
+.block-content-listing .price {
+	text-align: right;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
