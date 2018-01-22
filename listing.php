@@ -57,32 +57,72 @@
 								<img src="images/listing-1.jpg" alt="image1">
 							</div>
 							<div class="first-line">
-								<p>Paris</p>
-								<img src="images/icones/like.png" alt="heart">
+								<h2>Paris</h2>
+								<div class="hearts">
+									<img src="images/icones/like.png" alt="heart">
+									<img src="images/icones/like-red.png" alt="heart">
+								</div>
 							</div>
 							<div class="description">
 								<p>Sweat unisexe chaud et épais, d’une qualité irréprochable tant sur la qualité du molleton que sur la finition.</p>
 							</div>
 							<div class="price">
-								<p>17,30€</p>
+								<h2>17,30€</h2>
 							</div>
 						</div>
 						<div class="product2">
 							<div class="img-product">
 								<img src="images/listing-2.jpg" alt="image2">
 							</div>
-							<!--<div class="text">-->
-								<div class="first-line">
-									<p>Angers</p>
+							<div class="first-line">
+								<h2>Angers</h2>
+								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
+									<img src="images/icones/like-red.png" alt="heart">
 								</div>
-								<div class="description">
-									<p>Le modèle Angers est un sweat à capuche simple et de bonne qualité.</p>
+							</div>
+							<div class="description">
+								<p>Le modèle Angers est un sweat à capuche simple et de bonne qualité.</p>
+							</div>
+							<div class="price">
+								<h2>18,00€</h2>
+							</div>
+						</div>
+						<div class="product3">
+							<div class="img-product">
+								<img src="images/listing-3.jpg" alt="image3">
+							</div>
+							<div class="first-line">
+								<h2>Lyon</h2>
+								<div class="hearts">
+									<img src="images/icones/like.png" alt="heart">
+									<img src="images/icones/like-red.png" alt="heart">
 								</div>
-								<div class="price">
-									<p>18,00€</p>
+							</div>
+							<div class="description">
+								<p>Le sweat unisexe col rond idéal pour les petites quantités et pour ceux qui recherchent un modèle simple, bien coupé et de bonne qualité.</p>
+							</div>
+							<div class="price">
+								<h2>18,70€</h2>
+							</div>
+						</div>
+						<div class="product4">
+							<div class="img-product">
+								<img src="images/listing-4.jpg" alt="image4">
+							</div>
+							<div class="first-line">
+								<h2>Nancy</h2>
+								<div class="hearts">
+									<img src="images/icones/like.png" alt="heart">
+									<img src="images/icones/like-red.png" alt="heart">
 								</div>
-							<!--</div>-->
+							</div>
+							<div class="description">
+								<p>100% coton ! Le modèle Nancy est un sweat tricolore en coton (molleton non gratté) de bonne qualité avec de très belles finitions.</p>
+							</div>
+							<div class="price">
+								<h2>15,00€</h2>
+							</div>
 						</div>
 					</div>
 				</div>
