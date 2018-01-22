@@ -39,11 +39,11 @@
 				</div>
 				
 				<div class="logobar">
-					<div class="logoitschool">
+					<h1 class="logoitschool">
 						<a href="homepage.php">
 							<img class="logo" src="images/Logo.png" alt="logo">
 						</a>
-					</div>
+					</h1>
 
 					
 					<div class="right">

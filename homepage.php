@@ -25,7 +25,7 @@
 			
 			<div class="method">
 				<div class="text">
-					<h2 class="title">Nos méthodes</h2>	
+					<h2 class="title">Nos méthodes</h2>		
 				</div>
 			<div class="images">
 				<div class="broderie">
@@ -70,8 +70,10 @@
 				
 			</div>
 				
+			<div class="new">
+				div.	
 			</div>
-		
+		</div>		
  	</div>
  </div>
 
