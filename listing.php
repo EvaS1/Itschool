@@ -22,9 +22,17 @@
  			<div class="block-content-listing">
  				<div class="inner">
  					<div class="location">
- 						<p>
- 							Accueil > Vêtements > Sweats
- 						</p>
+ 						<ul>
+							<li>
+								<a href="homepage.php">Accueil </a> > 
+							</li>
+							<li>
+								<a href="#">Vêtements</a> >
+							</li>
+							<li>
+								<a href="#">Sweats</a> 
+							</li> 	
+ 						</ul>											
  					</div>
  					<div class="display">
  						<p>Voir :</p>
@@ -43,7 +51,7 @@
  					</div>
  					<div class="product1">
  						<div class="img-product">
- 							<img src="" alt="">
+ 							<img src="images/listing-1.jpg" alt="image1">
  						</div>
  						<div class="first-line">
  							<p>PARIS</p>

@@ -5,4 +5,26 @@
 	width: 1100px;
 	margin: 0 auto;
 	background-color: white;
+	position: relative;
+}
+
+/*---------------FIL D'ARIANE--------------*/
+
+/*Liste en ligne plus alignement*/
+.block-content-listing .location ul {
+	display: flex;
+	list-style: none;
+	padding-top: 65px;
+	padding-left: 80px;
+}
+
+/*Liens en noir*/
+.block-content-listing .location a {
+	color: black;
+	text-decoration: none;
+}
+
+/*Espace autour des chevrons*/
+.block-content-listing .location li:not(:first-of-type) {
+	padding-left: 4px;
 }
