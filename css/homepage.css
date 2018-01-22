@@ -14,7 +14,6 @@
 	justify-content: space-around;
 	align-items: center;
 	margin-top: 85px;
-	padding-bottom: 210px;
 }
 
 .block-content .method h1{
@@ -116,11 +115,17 @@
 	background: #f7f7f7;
 	box-shadow: 0 2px 6px #888;
 	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-top: 110px;
 	padding: 35px;
 	
 }
 
 .value p {
-	text-align: center;
+	margin-top: 30px;
+}
+
+.livraison, .prix, .paiement , .client {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
