@@ -1,5 +1,58 @@
 <!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>Document sans titre</title>
+</head>
+
+<body>
+
+<?php
+	$hostname = "localhost";
+	$dbname = "itschool";
+	$username = "laurab";
+	$userpass = "mds";
+	$connexionStr = "mysql:host=$hostname;dbname=$dbname;charset=utf8";
+	
+	try {
+		//paramètres : chaîne de connexion, identifiant, mot de passe
+		$connexion = new PDO($connexionStr, $username, $userpass);
+		//S'il y a un problème, il est géré sous forme d'exception
+		$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Fonctionnement en UTF8
+		$connexion -> setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'UTF8'");
+		//Récupération automatique sous forme d'objet
+		$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+		
+		/*$queryAjout = "INSERT INTO image (nomImage, idProduit) VALUES(:nomImage, :idProduit)";
+		$statement = $connexion->prepare($queryAjout);
+		$statement -> bindValue(':nomImage', 'listing-4.jpg',PDO::PARAM_STR);
+		$statement -> bindValue(':idProduit', 2 ,PDO::PARAM_INT);
+		if ($statement -> execute()) {
+			echo "<p>Le nombre de modifications pour l'ajout est de ".$statement->rowCount()."</p>";
+		}
+		*/
+	/*	$queryAjout = "INSERT INTO produit (nomProduit, descriptionProduit, caracteristiquesProduit, prixProduit, idCategorie) VALUES(:nomProduit, :descriptionProduit, :caracteristiquesProduit, :prixProduit, :idCategorie)";
+		$statement = $connexion->prepare($queryAjout);
+		$statement -> bindValue(':nomProduit', 'Nancy',PDO::PARAM_STR);
+		$statement -> bindValue(':descriptionProduit', '100% coton ! Le modèle Nancy est un sweat tricolore en coton (molleton non gratté) de bonne qualité avec de très belles finitions.',PDO::PARAM_STR);
+		$statement -> bindValue(':caracteristiquesProduit', '65 % coton, 35 % polyester, très doux, traitement spécial en finition peau de pêche pour un maximum de douceur (ce type de finition peut entraîner une légère différence de teinte entre les différentes tailles).',PDO::PARAM_STR);
+		$statement -> bindValue(':prixProduit', 15.00,PDO::PARAM_INT);
+		$statement -> bindValue(':idCategorie', 2 ,PDO::PARAM_INT);
+		if ($statement -> execute()) {
+			echo "<p>Le nombre de modifications pour l'ajout est de ".$statement->rowCount()."</p>";
+		}*/
+		
+	
+		$paris = 1;
+		$angers = 2;
+		$sweat = 2; /*ID de la catégorie sweat*/
+		$query = "SELECT * FROM produit WHERE idCategorie=:id";
+		$statement = $connexion->prepare($query);
+		$statement -> bindValue(':id', $sweat);
+		$statement -> execute();?>
+	<!doctype html>
+<html>
 	<head>
 		<meta charset="utf-8">
 		<title>Itschool</title>
@@ -55,12 +108,26 @@
 						<div class="product1">
 							<div class="img-product">
 								<a href="detail.php">
-								<img src="images/listing-1.jpg" alt="image1">
+		
+								<?php while ($produit = $statement -> fetch()) {
+								/*	echo $obj1 -> nomProduit;
+									echo $obj1 -> descriptionProduit;
+									echo $obj1 -> prixProduit;*/
+									$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $paris);
+									$statement -> execute();
+									$image = $statement -> fetch ();
+										echo "<img alt='image1' src='images/".$image-> nomImage."'>";
+
+								};?>
 								</a>
 							</div>
 							<div class="first-line">
 								<a href="detail.php">
-									<h2>Paris</h2>
+									<?php while ($produit = $statement -> fetch()) {
+										echo "<h2>".$produit -> nomProduit;"</h2>";
+									?>
 								</a>
 								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
@@ -68,64 +135,142 @@
 								</div>
 							</div>
 							<div class="description">
-								<p>Sweat unisexe chaud et épais, d’une qualité irréprochable tant sur la qualité du molleton que sur la finition.</p>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<p>".$produit -> descriptionProduit;"</p>";
+								?>								
 							</div>
 							<div class="price">
-								<h2>17,30€</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> prixProduit;"</h2>";
+								?>
 							</div>
 						</div>
 						<div class="product2">
 							<div class="img-product">
-								<img src="images/listing-2.jpg" alt="image2">
+								<!--<img src="images/listing-2.jpg" alt="image2">-->
+								<a href="detail.php">
+								<?php 
+									$angers = 2;
+									$sweat = 2; /*ID de la catégorie sweat*/
+									$query = "SELECT * FROM produit WHERE idCategorie=:id";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $sweat);
+									$statement -> execute();
+									while ($produit = $statement -> fetch()) {
+								/*	echo $obj1 -> nomProduit;
+									echo $obj1 -> descriptionProduit;
+									echo $obj1 -> prixProduit;*/
+									$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $angers);
+									$statement -> execute();
+									$image = $statement -> fetch ();
+										echo "<img alt='image2' src='images/".$image-> nomImage."'>";
+
+								};?>
+								</a>
 							</div>
 							<div class="first-line">
-								<h2>Angers</h2>
+								<?php while ($produit = $statement -> fetch()) {
+										echo "<h2>".$produit -> nomProduit;"</h2>";
+								?>
 								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
 									<img src="images/icones/like-red.png" alt="heart">
 								</div>
 							</div>
 							<div class="description">
-								<p>Le modèle Angers est un sweat à capuche simple et de bonne qualité.</p>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<p>".$produit -> descriptionProduit;"</p>";
+								?>
 							</div>
 							<div class="price">
-								<h2>18,00€</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> prixProduit;"</h2>";
+								?>
 							</div>
 						</div>
 						<div class="product3">
 							<div class="img-product">
-								<img src="images/listing-3.jpg" alt="image3">
+								<?php
+									$lyon = 3;
+									$sweat = 2; /*ID de la catégorie sweat*/
+									$query = "SELECT * FROM produit WHERE idCategorie=:id";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $sweat);
+									$statement -> execute();
+									while ($produit = $statement -> fetch()) {
+								/*	echo $obj1 -> nomProduit;
+									echo $obj1 -> descriptionProduit;
+									echo $obj1 -> prixProduit;*/
+									$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $lyon);
+									$statement -> execute();
+									$image = $statement -> fetch ();
+										echo "<img alt='image3' src='images/".$image-> nomImage."'>";
+								};?>
 							</div>
 							<div class="first-line">
-								<h2>Lyon</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> nomProduit;"</h2>";
+								?>
 								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
 									<img src="images/icones/like-red.png" alt="heart">
 								</div>
 							</div>
 							<div class="description">
-								<p>Le sweat unisexe col rond idéal pour les petites quantités et pour ceux qui recherchent un modèle simple, bien coupé et de bonne qualité.</p>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<p>".$produit -> descriptionProduit;"</p>";
+								?>
 							</div>
 							<div class="price">
-								<h2>18,70€</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> prixProduit;"</h2>";
+								?>
 							</div>
 						</div>
 						<div class="product4">
 							<div class="img-product">
-								<img src="images/listing-4.jpg" alt="image4">
+								<?php
+									$nancy = 4;
+									$sweat = 2; /*ID de la catégorie sweat*/
+									$query = "SELECT * FROM produit WHERE idCategorie=:id";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $sweat);
+									$statement -> execute();
+									while ($produit = $statement -> fetch()) {
+								/*	echo $obj1 -> nomProduit;
+									echo $obj1 -> descriptionProduit;
+									echo $obj1 -> prixProduit;*/
+									$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
+									$statement = $connexion->prepare($query);
+									$statement -> bindValue(':id', $nancy);
+									$statement -> execute();
+									$image = $statement -> fetch ();
+										echo "<img alt='image4' src='images/".$image-> nomImage."'>";
+
+								};?>
 							</div>
 							<div class="first-line">
-								<h2>Nancy</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> nomProduit;"</h2>";
+								?>
 								<div class="hearts">
 									<img src="images/icones/like.png" alt="heart">
 									<img src="images/icones/like-red.png" alt="heart">
 								</div>
 							</div>
 							<div class="description">
-								<p>100% coton ! Le modèle Nancy est un sweat tricolore en coton (molleton non gratté) de bonne qualité avec de très belles finitions.</p>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<p>".$produit -> descriptionProduit;"</p>";
+								?>
 							</div>
 							<div class="price">
-								<h2>15,00€</h2>
+								<?php while ($produit = $statement -> fetch()) {
+									echo "<h2>".$produit -> prixProduit;"</h2>";
+								?>
 							</div>
 						</div>
 					</div>
@@ -139,4 +284,17 @@
 		?>
 
 	</body>
+</html>
+		
+		
+	<?php } catch(Exception $e) {
+		echo '<p>Erreur n° : '.$e->getCode().' : '. $e->getMessage().'</p>';
+		echo '<p>Dans : '.$e->getFile().' ('.$e->getLine().') </p>';
+		echo "<pre>"; //Pour que le var dump s'affiche mieux
+		var_dump($e->getTrace());
+		echo "</pre>";
+	}?>
+
+
+</body>
 </html>
