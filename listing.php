@@ -110,9 +110,6 @@
 								<a href="detail.php">
 		
 								<?php while ($produit = $statement -> fetch()) {
-								/*	echo $obj1 -> nomProduit;
-									echo $obj1 -> descriptionProduit;
-									echo $obj1 -> prixProduit;*/
 									$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
 									$statement = $connexion->prepare($query);
 									$statement -> bindValue(':id', $paris);
