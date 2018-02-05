@@ -25,7 +25,7 @@
 				<ul>
 					<li><a href="homepage.php">Accueil </a>> </li>
 					<li><a href="#"> Vêtements </a>></li>
-					<li><a href="#"> Sweats </a>></li>
+					<li><a href="listing.php"> Sweats </a>></li>
 					<li><a href="#"> PARIS </a></li>
 				</ul>
 			</div>
