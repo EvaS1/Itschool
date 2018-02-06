@@ -142,11 +142,11 @@
 									echo "<h2>".$produit -> prixProduit."€</h2>";
 								?>
 							</div>
-						</div>
+						</div>						
 						
-					
-						
-						<?php } ?>
+						<?php 
+							} 
+						?>
 						
 						
 					</div>
