@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="css/detail.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/eva.css">
+<script src="vendors/jquery.min.js"></script> <!--Dans balise head ou fin du body-->
+<script src="detail.js"></script>
 
 </head>
 
@@ -82,14 +84,14 @@
 							$statement -> bindValue(':id', $idProduit);
 							$statement -> execute();
 							while($image = $statement -> fetch ()){
-								echo "<img alt='image1' src='images/".$image -> nomImage."'>";
+								echo "<img id='detail' alt='image1' src='images/".$image -> nomImage."'>";
 								
 							}
 						?>
 						
 					</div>
 					<div class="product">
-						<img src="images/listing-1.jpg">
+						<img src="images/listing-3.jpg" id ="main-image">
 					</div>
 				</div>
 
