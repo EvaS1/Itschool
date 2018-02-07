@@ -115,7 +115,7 @@
 							echo "<div class='product".$i."'>";
 					?>
 							<div class="img-product">
-								<a href="detail.php">		
+								<a href="detail.php?id=<?php echo $produit -> idProduit?>">		
 									<?php 
 										$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
 										$statementImage = $connexion->prepare($query);

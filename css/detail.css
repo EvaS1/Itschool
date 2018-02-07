@@ -44,9 +44,7 @@
 	margin-right: 35px;
 }
 
-.block-content-detail .imgdetail img:hover,
-.block-content-detail .imgdetail img:focus,
-.block-content-detail .imgdetail img:active {
+.block-content-detail .imgdetail img:first-of-type {
 	border:thin solid black;
 }
 
@@ -105,4 +103,23 @@
 
 .block-content-detail .price {
 	text-align: right;
+}
+
+/*Style coeurs*/
+.block-content-detail .title .hearts {
+	display: flex;
+	align-items: center;
+}
+
+/*Alignement 2eme coeur sur le premier*/
+.block-content-detail .title .hearts img:last-of-type {
+	width: 42.05px;
+	z-index: 2;
+	position: absolute;
+	opacity: 0;
+}
+.block-content-detail .text .hearts img:last-of-type:hover,
+.block-content-detail .text .hearts img:last-of-type:focus,
+.block-content-detail .text .hearts img:last-of-type:active {
+	opacity: 1;
 }

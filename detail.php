@@ -9,8 +9,6 @@
 <link rel="stylesheet" href="css/detail.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/eva.css">
-<script src="vendors/jquery.min.js"></script> <!--Dans balise head ou fin du body-->
-<script src="detail.js"></script>
 
 </head>
 
@@ -51,7 +49,7 @@
 			echo "<p>Le nombre de modifications pour l'ajout est de ".$statement->rowCount()."</p>";
 		}*/
 		
-		$idProduit=1;
+		$idProduit=$_GET['id'];
 		$query = "SELECT * FROM produit WHERE idProduit=:id";
 		$statement = $connexion->prepare($query);
 		$statement -> bindValue(':id', $idProduit);
@@ -83,19 +81,15 @@
 							$statement = $connexion->prepare($query);
 							$statement -> bindValue(':id', $idProduit);
 							$statement -> execute();
-							$isfirstimage = true;
 							while($image = $statement -> fetch ()){
-								if ($isfirstimage) {
-									$firstimage = $image;
-									$isfirstimage = false;
-								}
-								echo "<img id='detail' alt='image1' src='images/".$image -> nomImage."'>";		
+								echo "<img alt='image1' src='images/".$image -> nomImage."'>";
+								
 							}
 						?>
 						
 					</div>
 					<div class="product">
-						<img src="images/<?php echo $firstimage -> nomImage?>" id ="main-image">
+						<img src="images/listing-<?php echo $idProduit;?>.jpg">
 					</div>
 				</div>
 
@@ -104,7 +98,10 @@
 						<h2><?php $titre = $produit -> nomProduit;
 							$titre = strtoupper($titre);
 							echo $titre;?></h2>
-						<img src="images/icones/likelau.png">
+						<div class="hearts">
+							<img src="images/icones/likelau.png">
+							<img src="images/icones/like-red.png">
+						</div>
 					</div>
 					<div class="description">
 						<h3>Description</h3>
