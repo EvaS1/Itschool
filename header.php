@@ -49,11 +49,12 @@
 					
 					<div class="right">
 						<div class="searchbar">
-							<img class="search" src="../images/icones/search.png" alt="search">
-							<form class="research" method="post" action="search.php">
+							
+							<form class="research" method=post action="search.php">
 								<input type="text" placeholder="Rechercher...">
-								<input type="submit" value="">
+								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>
+							<p>PZEGJPZEHG</p>
 						</div>
 
 						<div class="wishlist">

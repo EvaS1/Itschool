@@ -47,8 +47,7 @@
 					
 					<div class="right">
 						<div class="searchbar">
-							<!--<img class="search" src="images/icones/search.png" alt="search">-->
-							<form class="research" method=post action="search.php">
+							<form class="research" method=post action="search.php?search=<?php $_POST['search']?>">
 								<input type="text" placeholder="Rechercher...">
 								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>

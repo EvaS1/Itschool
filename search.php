@@ -40,7 +40,8 @@
 							$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 							
 							//Création de la variable qui contient la recherche
-							$search = $_POST['search'];
+							$search = $_GET['search'];
+							echo var_dump($search);
 							
 							//Recherche dans la table produit, dans la colonne nom
 							$query = "SELECT * FROM produit WHERE nomProduit LIKE '%$search%' ORDER BY idProduit DESC";
