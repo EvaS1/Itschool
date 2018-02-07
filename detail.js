@@ -1,5 +1,5 @@
 $(function () {
-	$('#detail img').click(function() {
-		$('#main-image').attr('src', '#detail img');
-	});
+	$('.imgdetail img').click(function() {
+		$('#main-image').attr('src', $(this).attr('src'));
+	});	
 });

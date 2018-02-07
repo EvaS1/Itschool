@@ -83,15 +83,19 @@
 							$statement = $connexion->prepare($query);
 							$statement -> bindValue(':id', $idProduit);
 							$statement -> execute();
+							$isfirstimage = true;
 							while($image = $statement -> fetch ()){
-								echo "<img id='detail' alt='image1' src='images/".$image -> nomImage."'>";
-								
+								if ($isfirstimage) {
+									$firstimage = $image;
+									$isfirstimage = false;
+								}
+								echo "<img id='detail' alt='image1' src='images/".$image -> nomImage."'>";		
 							}
 						?>
 						
 					</div>
 					<div class="product">
-						<img src="images/listing-3.jpg" id ="main-image">
+						<img src="images/<?php echo $firstimage -> nomImage?>" id ="main-image">
 					</div>
 				</div>
 
