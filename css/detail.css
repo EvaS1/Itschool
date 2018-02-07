@@ -44,7 +44,9 @@
 	margin-right: 35px;
 }
 
-.block-content-detail .imgdetail img:first-of-type {
+.block-content-detail .imgdetail img:hover,
+ .block-content-detail .imgdetail img:focus,
+ .block-content-detail .imgdetail img:active {
 	border:thin solid black;
 }
 

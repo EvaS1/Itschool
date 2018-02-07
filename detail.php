@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="css/detail.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/eva.css">
-
+<script src="vendors/jquery.min.js"></script> <!--Dans balise head ou fin du body-->
+ <script src="detail.js"></script>
 </head>
 
 <body>
@@ -81,15 +82,20 @@
 							$statement = $connexion->prepare($query);
 							$statement -> bindValue(':id', $idProduit);
 							$statement -> execute();
+							$isfirstimage = true;
 							while($image = $statement -> fetch ()){
-								echo "<img alt='image1' src='images/".$image -> nomImage."'>";
+								if ($isfirstimage) {
+ 									$firstimage = $image;
+ 									$isfirstimage = false;
+ 								}
+ 								echo "<img id='detail' alt='image1' src='images/".$image ->	nomImage."'>";
 								
 							}
 						?>
 						
 					</div>
 					<div class="product">
-						<img src="images/listing-<?php echo $idProduit;?>.jpg">
+						<img src="images/<?php echo $firstimage -> nomImage?>" id ="main-image">
 					</div>
 				</div>
 

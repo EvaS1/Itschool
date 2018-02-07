@@ -1,5 +1,4 @@
 <head>
-	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/eva.css">
 
 </head>
@@ -48,9 +47,10 @@
 					
 					<div class="right">
 						<div class="searchbar">
-							<img class="search" src="images/icones/search.png" alt="search">
-							<form class="research">
+							<!--<img class="search" src="images/icones/search.png" alt="search">-->
+							<form class="research" method=post action="search.php">
 								<input type="text" placeholder="Rechercher...">
+								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>
 						</div>
 

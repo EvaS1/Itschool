@@ -1,7 +1,7 @@
 <head>
-	<link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="../vendors/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/eva.css">
+	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/eva.css">
 
 </head>
 
@@ -50,8 +50,9 @@
 					<div class="right">
 						<div class="searchbar">
 							<img class="search" src="../images/icones/search.png" alt="search">
-							<form class="research">
+							<form class="research" method="post" action="search.php">
 								<input type="text" placeholder="Rechercher...">
+								<input type="submit" value="">
 							</form>
 						</div>
 

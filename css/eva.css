@@ -113,10 +113,16 @@ body {
 }
 
 /*Loupe dans barre de recherche*/
-.block-header .logobar .searchbar img {
+.block-header .logobar .searchbar .search {
 	position: absolute;
 	z-index: 1;
-	margin: 0 0 0 226px;
+	margin: -25px 0 0 226px;
+	background-image: url(../images/icones/search.png);
+	width: 19px;
+    height: 20px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+	cursor: pointer;
 }
 
 /*Style panier*/
