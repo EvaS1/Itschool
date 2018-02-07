@@ -10,6 +10,9 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="css/listing.css">
+		<script src="vendors/jquery.min.js"></script>
+		<script type="text/javascript" src="listing.js"></script>
+		
 	</head>
 
 
@@ -55,17 +58,21 @@
 					echo "<p>Le nombre de modifications pour l'ajout est de ".$statement->rowCount()."</p>";
 				}*/
 				
+				$idcategorie = 2; /*ID de la catégorie sweat*/
 				
-				$sweat = 2; /*ID de la catégorie sweat*/
-				$query = "SELECT * FROM produit WHERE idCategorie=:id";
+				if(isset($_GET['orderby']) && $_GET['orderby'] == 'asc'){
+					$query = "SELECT * FROM produit WHERE idCategorie=2 ORDER BY prixProduit asc";
+					
+				}elseif(isset($_GET['orderby']) && $_GET['orderby'] == 'desc'){
+					$query = "SELECT * FROM produit WHERE idCategorie=2 ORDER BY prixProduit desc";
+				}else{
+					$query = "SELECT * FROM produit WHERE idCategorie=:id";
+				}
 				$statementProduit = $connexion->prepare($query);
-				$statementProduit -> bindValue(':id', $sweat);
+				$statementProduit -> bindValue(':id', $idcategorie);
 				$statementProduit -> execute();
 			?>
 	
-
-	
-
 		<div class="content">
  			<div class="block-content-listing">
  				<div class="inner">
@@ -90,11 +97,11 @@
 						<div class="sort-by">
 							<form>
 								<label>Trier par : </label>
-								<select name="sort">
-									<option>Sélectionner
-									<option>Nouveauté
-									<option>Prix croissant
-									<option>Prix décroissant
+								<select id="options" name="sort">
+									<option value="select">Sélectionner
+									<option value="new">Nouveauté
+									<option value="asc">Prix croissant	
+									<option value="desc">Prix décroissant
 								</select>
 							</form>
 						</div>
@@ -106,15 +113,13 @@
 							$i++;
 				
 							echo "<div class='product".$i."'>";
-
-
 					?>
 							<div class="img-product">
 								<a href="detail.php">		
 									<?php 
 										$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
 										$statementImage = $connexion->prepare($query);
-										$statementImage -> bindValue(':id', $i);
+										$statementImage -> bindValue(':id', $produit -> idProduit);
 										$statementImage -> execute();
 										$image = $statementImage -> fetch ();
 										echo "<img alt='image1' src='images/".$image-> nomImage."'>";
@@ -148,7 +153,6 @@
 							} 
 						?>
 						
-						
 					</div>
 				</div>
 			</div>
@@ -169,6 +173,8 @@
 			include('button.php');
 			include('parts/footer.php');
 		?>
+
+
 
 	</body>
 </html>
