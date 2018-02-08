@@ -1,6 +1,5 @@
 .block-content-search .inner {
 	width: 1100px;
-	height: 610px;
 	margin: 0 auto;
 	background-color: white;
 	padding: 0 80px;
@@ -15,4 +14,27 @@
 	list-style: none;
 	display: flex;
 	justify-content: space-around;
+	align-items: flex-start;
+	padding: 20px 0;
+}
+
+.block-content-search a {
+	color: black;
+}
+
+.block-content-search li {
+	width: 200px;
+	height: 485px;
+	display: flex;
+	flex-direction: column;
+}
+
+.block-content-search li img {
+	width: 200px;
+}
+
+.block-content-search .first-line {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
 }
