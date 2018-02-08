@@ -50,11 +50,10 @@
 					<div class="right">
 						<div class="searchbar">
 							
-							<form class="research" method=post action="search.php">
-								<input type="text" placeholder="Rechercher...">
+							<form class="research" method="get" action="../search.php">
+								<input type="search" placeholder="Rechercher...">
 								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>
-							<p>PZEGJPZEHG</p>
 						</div>
 
 						<div class="wishlist">

@@ -47,7 +47,7 @@
 					
 					<div class="right">
 						<div class="searchbar">
-							<form class="research" method=post action="search.php?search=<?php $_POST['search']?>">
+							<form class="research" method=post action="search.php?search=paris">
 								<input type="text" placeholder="Rechercher...">
 								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>
