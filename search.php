@@ -55,7 +55,12 @@
 						}
 						
 						if ($statementProduit -> rowCount() > 0) { 
-						 echo "<div class='results'>Votre recherche pour '".$q."' a donné ".$statementProduit -> rowCount()." résultats : </div>";?>
+						 echo "<div class='results'>Votre recherche pour '".$q."' a donné ".$statementProduit -> rowCount();
+							if ($statementProduit -> rowCount() > 1) {
+								echo " résultats : </div>";
+							} else {
+								echo " résultat : </div>";
+							} ?>
 			
 							<ul>
 								<?php while($produit = $statementProduit->fetch()) { ?>
