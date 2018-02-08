@@ -41,14 +41,14 @@
 						//Récupération automatique sous forme d'objet
 						$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 						
-						
+						//Récupération colonnes de la table produit
 						$query = "SELECT * FROM produit  WHERE idProduit=:id ORDER BY idProduit ASC";
 						$statementProduit = $connexion->prepare($query);
 						$statementProduit -> bindValue(':id', 'idProduit');
 						$statementProduit -> execute();
 						
 						
-
+						//S'il y a une recherche
 						if(isset($_GET['q']) AND !empty($_GET['q'])) {
 							$q = htmlspecialchars($_GET['q']);
 							$query = 'SELECT * FROM produit WHERE CONCAT(nomProduit, descriptionProduit, caracteristiquesProduit) LIKE "%'.$q.'%" ORDER BY idProduit ASC';
@@ -57,6 +57,7 @@
 							$statementProduit -> execute();
 						}
 						
+						//S'il y a au moins un résultat : affichage du nombre de résultat(s)
 						if ($statementProduit -> rowCount() > 0) { 
 						 echo "<div class='results'>Votre recherche pour '".$q."' a donné ".$statementProduit -> rowCount();
 							if ($statementProduit -> rowCount() > 1) {
@@ -64,7 +65,8 @@
 							} else {
 								echo " résultat : </div>";
 							} ?>
-			
+						
+							<!--Affichage du ou des résultat(s)-->
 							<ul>
 								<?php while($produit = $statementProduit->fetch()) { 
 								
@@ -82,6 +84,7 @@
 								
 								<?php } ?>
 							</ul>
+							
 							
 							<?php } else { ?>
 							<div class='results'>Aucun résultat pour "<?php echo $q?>"...</div>
