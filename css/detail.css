@@ -39,7 +39,6 @@
 }
 
 .block-content-detail .imgdetail {
-	display: flex;
 	flex-direction: column;
 	margin-right: 35px;
 }
@@ -124,4 +123,52 @@
 .block-content-detail .text .hearts img:last-of-type:focus,
 .block-content-detail .text .hearts img:last-of-type:active {
 	opacity: 1;
+}
+
+
+.block-content-detail .plus {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.block-content-detail .plus .button {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.block-content-detail button {
+	background-color: #f8f8f8;
+	border: none;
+	border-radius: 5px;
+	padding: 9px 20px 9px 20px;
+	font-size: 18px;
+	box-shadow: 0 2px 6px #888;
+} 
+
+.block-content-detail button a{
+	color: black;
+}
+
+.block-content-detail .sizes li {
+	list-style: none;
+	border: 1px solid #000000;
+	padding: 5px 12px 5px 14px;
+}
+
+.block-content-detail .sizes ul {
+	display: flex;
+}
+
+.block-content-detail .sizes {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	margin-left: 210px;
+}
+
+.block-content-detail .sizes span {
+	margin-right: 12px;
 }

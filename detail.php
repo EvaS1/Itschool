@@ -125,6 +125,22 @@
 						<h2><?php echo $produit -> prixProduit ."€";?></h2>
 					</div>
 				</div>
+				
+			</div>
+			<div class="plus">
+				<div class="sizes">
+					<span>Taille</span>
+					<ul>
+						<li>XS</li>
+						<li>S</li>
+						<li>M</li>
+						<li>L</li>
+						<li>XL</li>
+					</ul>
+				</div>
+				<div class="button">
+					<button type="button"><a href="#">Personnaliser !</a></button>
+				</div>
 			</div>
 		</div>
 	</div>
