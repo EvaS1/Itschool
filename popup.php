@@ -22,16 +22,3 @@
 				</div>
 		</div>
 	</div>
-	
-<script type="text/javascript">
-	
-	var popup = document.getElementById('newpopup');
-	var close = document.getElementById('closepopup');
-	console.log('Close popup element : ' + close.innerHTML);
-	close.addEventListener("click", closePopup, false);
-		
-		function closePopup(){
-			popup.style.display="none";
-		}
-	
-</script>

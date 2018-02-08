@@ -1,9 +1,3 @@
-<head>
-	<link rel="stylesheet" href="css/eva.css">
-
-</head>
-
-
 <div class="page">
 	<div class="header">
 		<header class="block-header">

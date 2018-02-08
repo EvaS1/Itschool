@@ -36,6 +36,9 @@
 					} else {
 						showin.innerHTML += this.responseText;
 					}
+					$('#closepopup').click(function(event){
+						$('#newpopup').css({'display':'none'});
+					});
 				}
 			};
 

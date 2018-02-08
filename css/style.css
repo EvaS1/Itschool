@@ -200,6 +200,7 @@ ul {
 
 .popup {
     position: absolute;
+	max-width: 422px;
     -webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1.5s;  /* Safari 4.0 - 8.0 */    
     -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */

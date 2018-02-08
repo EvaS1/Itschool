@@ -40,15 +40,18 @@
 						$connexion -> setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'UTF8'");
 						//Récupération automatique sous forme d'objet
 						$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-
-						$query = "SELECT nomProduit FROM produit  WHERE idProduit=:id ORDER BY idProduit ASC";
+						
+						
+						$query = "SELECT * FROM produit  WHERE idProduit=:id ORDER BY idProduit ASC";
 						$statementProduit = $connexion->prepare($query);
 						$statementProduit -> bindValue(':id', 'idProduit');
 						$statementProduit -> execute();
+						
+						
 
 						if(isset($_GET['q']) AND !empty($_GET['q'])) {
 							$q = htmlspecialchars($_GET['q']);
-							$query = 'SELECT nomProduit FROM produit WHERE CONCAT(nomProduit, descriptionProduit, caracteristiquesProduit) LIKE "%'.$q.'%" ORDER BY idProduit ASC';
+							$query = 'SELECT * FROM produit WHERE CONCAT(nomProduit, descriptionProduit, caracteristiquesProduit) LIKE "%'.$q.'%" ORDER BY idProduit ASC';
 							$statementProduit = $connexion->prepare($query);
 							$statementProduit -> bindValue(':id', 'idProduit');
 							$statementProduit -> execute();
@@ -63,11 +66,23 @@
 							} ?>
 			
 							<ul>
-								<?php while($produit = $statementProduit->fetch()) { ?>
-								<li><?php echo $produit -> nomProduit ?></li>
-								<?php } ?>
+								<?php while($produit = $statementProduit->fetch()) { 
 								
+								$query ="SELECT * FROM image WHERE idProduit=:id LIMIT 0,1";
+								$statementImage = $connexion->prepare($query);
+								$statementImage -> bindValue(':id', $produit -> idProduit);
+								$statementImage -> execute();
+								$image = $statementImage -> fetch (); ?>
+								
+								<li>
+								<a href="detail.php?id=<?php echo $produit -> idProduit?>">
+								<?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?></a><br />
+								<?php echo "<div class='first-line '><span class='name'>".$produit -> nomProduit."</span><span class='price'>".$produit -> prixProduit."€</div>";  ?>
+								<?php echo "<div class='description'>".$produit -> descriptionProduit."</div>"; ?>
+								
+								<?php } ?>
 							</ul>
+							
 							<?php } else { ?>
 							<div class='results'>Aucun résultat pour "<?php echo $q?>"...</div>
 							<?php } 
