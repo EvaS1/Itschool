@@ -49,9 +49,8 @@
 					
 					<div class="right">
 						<div class="searchbar">
-							
-							<form class="research" method="get" action="../search.php">
-								<input type="search" placeholder="Rechercher...">
+							<form  name="q" method="POST" action="./search.php">
+								<input type="text" placeholder="Rechercher...">
 								<input class="search" type="submit" value="" alt="Rechercher">
 							</form>
 						</div>

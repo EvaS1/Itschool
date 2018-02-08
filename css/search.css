@@ -1,0 +1,18 @@
+.block-content-search .inner {
+	width: 1100px;
+	height: 610px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 0 80px;
+}
+
+.block-content-search .results {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.block-content-search ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+}

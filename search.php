@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="css/homepage.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/eva.css">
+		<link rel="stylesheet" href="css/search.css">
+		
 	</head>
 
 	<body>
@@ -18,8 +20,9 @@
 		?>
 
 		<div class="content">
-			<div class="block-content">
+			<div class="block-content-search">
 				<div class="inner">
+				
 				
 				<?php
 					$hostname = "localhost";
@@ -38,43 +41,32 @@
 						//Récupération automatique sous forme d'objet
 						$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
-						$query = "SELECT nomProduit FROM produit  WHERE idProduit=:id ORDER BY idProduit DESC";
+						$query = "SELECT nomProduit FROM produit  WHERE idProduit=:id ORDER BY idProduit ASC";
 						$statementProduit = $connexion->prepare($query);
 						$statementProduit -> bindValue(':id', 'idProduit');
 						$statementProduit -> execute();
 
 						if(isset($_GET['q']) AND !empty($_GET['q'])) {
 							$q = htmlspecialchars($_GET['q']);
-							$query = 'SELECT nomProduit FROM produit WHERE CONCAT(nomProduit, descriptionProduit, caracteristiquesProduit) LIKE "%'.$q.'%" ORDER BY idProduit DESC';
+							$query = 'SELECT nomProduit FROM produit WHERE CONCAT(nomProduit, descriptionProduit, caracteristiquesProduit) LIKE "%'.$q.'%" ORDER BY idProduit ASC';
 							$statementProduit = $connexion->prepare($query);
 							$statementProduit -> bindValue(':id', 'idProduit');
 							$statementProduit -> execute();
 						}
-						?>
-
 						
-
-						<form method="GET">
-							<input type="search" name="q" placeholder="Rechercher...">
-							<input type="submit" value="Valider">
-						</form>		
-
-						<?php if ($statementProduit -> rowCount() > 0) { ?>
-
+						if ($statementProduit -> rowCount() > 0) { 
+						 echo "<div class='results'>Votre recherche pour '".$q."' a donné ".$statementProduit -> rowCount()." résultats : </div>";?>
+			
 							<ul>
 								<?php while($produit = $statementProduit->fetch()) { ?>
 								<li><?php echo $produit -> nomProduit ?></li>
 								<?php } ?>
+								
 							</ul>
 							<?php } else { ?>
-							Aucun résultat pour "<?php echo $q ?>"...
-							<?php } ?>
-							
-
+							<div class='results'>Aucun résultat pour "<?php echo $q?>"...</div>
+							<?php } 
 						
-							
-							
-					<?php
 					} catch(Exception $e) {
 						echo '<p>Erreur n° : '.$e->getCode().' : '. $e->getMessage().'</p>';
 						echo '<p>Dans : '.$e->getFile().' ('.$e->getLine().') </p>';
@@ -84,6 +76,7 @@
 					}
 		
 				?>
+				
 				
 				
 				</div>
